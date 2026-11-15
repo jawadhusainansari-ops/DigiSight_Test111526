@@ -10,13 +10,10 @@ h1{font-size:24px;margin-bottom:10px}
 .headline div{text-align:center}
 .headline div span{display:block;font-size:20px;font-weight:bold}
 section{background:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.1);margin-bottom:20px}
-h2{font-size:20px;margin-top:0}
-.chart{display:flex;justify-content:space-around;align-items:flex-end;height:200px;margin-bottom:10px}
-.bar{width:30px;background:#4a90e2;position:relative}
-.bar text{fill:#fff;font-size:12px;text-anchor:middle}
-.bar:hover{background:#357ab8}
-.axis{stroke:#666;stroke-width:1}
-.axis text{font-size:12px;fill:#666}
+svg{width:100%;height:auto}
+.bar{fill:#4a90e2}
+.bar:hover{fill:#357ab8}
+.axis text{font-size:12px}
 table{width:100%;border-collapse:collapse}
 th,td{padding:8px;border-bottom:1px solid #ddd;text-align:left}
 th{background:#f0f0f0}
@@ -35,129 +32,100 @@ select{margin-bottom:10px;padding:5px}
 
 <section>
   <h2>Average Salary by City</h2>
-  <svg class="chart" viewBox="0 0 200 200">
-    <line x1="30" y1="180" x2="180" y2="180" class="axis"/>
-    <line x1="30" y1="180" x2="30" y2="20" class="axis"/>
-    <g transform="translate(30,180)">
-      <g class="bar" transform="translate(0,-150)" style="height:150px;">
-        <rect width="30" height="150"></rect>
-        <text x="15" y="-5">510,000</text>
-      </g>
-      <g class="bar" transform="translate(40,-130)" style="height:130px;">
-        <rect width="30" height="130"></rect>
-        <text x="15" y="-5">450,000</text>
-      </g>
-      <g class="bar" transform="translate(80,-110)" style="height:110px;">
-        <rect width="30" height="110"></rect>
-        <text x="15" y="-5">290,000</text>
-      </g>
-      <g class="bar" transform="translate(120,-100)" style="height:100px;">
-        <rect width="30" height="100"></rect>
-        <text x="15" y="-5">274,000</text>
-      </g>
+  <svg viewBox="0 0 400 200">
+    <g transform="translate(40,10)">
+      <line x1="0" y1="150" x2="300" y2="150" stroke="#999"/>
+      <line x1="0" y1="0" x2="0" y2="150" stroke="#999"/>
+      <text x="-30" y="5" class="axis">Islamabad</text>
+      <text x="-30" y="55" class="axis">Lahore</text>
+      <text x="-30" y="105" class="axis">Remote</text>
+      <text x="-30" y="155" class="axis">Karachi</text>
+      <rect class="bar" x="0" y="150- (510000/560000)*150" width="50" height="(510000/560000)*150"></rect>
+      <rect class="bar" x="80" y="150- (450000/560000)*150" width="50" height="(450000/560000)*150"></rect>
+      <rect class="bar" x="160" y="150- (290000/560000)*150" width="50" height="(290000/560000)*150"></rect>
+      <rect class="bar" x="240" y="150- (274000/560000)*150" width="50" height="(274000/560000)*150"></rect>
+      <text x="0" y="165" text-anchor="middle">Islamabad</text>
+      <text x="80" y="165" text-anchor="middle">Lahore</text>
+      <text x="160" y="165" text-anchor="middle">Remote</text>
+      <text x="240" y="165" text-anchor="middle">Karachi</text>
     </g>
-    <text x="30" y="195" font-size="12">Islamabad</text>
-    <text x="70" y="195" font-size="12">Lahore</text>
-    <text x="110" y="195" font-size="12">Remote</text>
-    <text x="150" y="195" font-size="12">Karachi</text>
   </svg>
 </section>
 
 <section>
   <h2>Average Salary by Main Skill</h2>
-  <svg class="chart" viewBox="0 0 300 200">
-    <line x1="30" y1="180" x2="280" y2="180" class="axis"/>
-    <line x1="30" y1="180" x2="30" y2="20" class="axis"/>
-    <g transform="translate(30,180)">
-      <g class="bar" transform="translate(0,-150)" style="height:150px;">
-        <rect width="30" height="150"></rect>
-        <text x="15" y="-5">520,000</text>
-      </g>
-      <g class="bar" transform="translate(40,-140)" style="height:140px;">
-        <rect width="30" height="140"></rect>
-        <text x="15" y="-5">505,000</text>
-      </g>
-      <g class="bar" transform="translate(80,-130)" style="height:130px;">
-        <rect width="30" height="130"></rect>
-        <text x="15" y="-5">480,000</text>
-      </g>
-      <g class="bar" transform="translate(120,-100)" style="height:100px;">
-        <rect width="30" height="100"></rect>
-        <text x="15" y="-5">360,000</text>
-      </g>
-      <g class="bar" transform="translate(160,-80)" style="height:80px;">
-        <rect width="30" height="80"></rect>
-        <text x="15" y="-5">340,000</text>
-      </g>
-      <g class="bar" transform="translate(200,-60)" style="height:60px;">
-        <rect width="30" height="60"></rect>
-        <text x="15" y="-5">300,000</text>
-      </g>
+  <svg viewBox="0 0 500 200">
+    <g transform="translate(60,10)">
+      <line x1="0" y1="150" x2="380" y2="150" stroke="#999"/>
+      <line x1="0" y1="0" x2="0" y2="150" stroke="#999"/>
+      <rect class="bar" x="0" y="150- (520000/560000)*150" width="40" height="(520000/560000)*150"></rect>
+      <rect class="bar" x="60" y="150- (505000/560000)*150" width="40" height="(505000/560000)*150"></rect>
+      <rect class="bar" x="120" y="150- (480000/560000)*150" width="40" height="(480000/560000)*150"></rect>
+      <rect class="bar" x="180" y="150- (360000/560000)*150" width="40" height="(360000/560000)*150"></rect>
+      <rect class="bar" x="240" y="150- (340000/560000)*150" width="40" height="(340000/560000)*150"></rect>
+      <rect class="bar" x="300" y="150- (300000/560000)*150" width="40" height="(300000/560000)*150"></rect>
+      <text x="0" y="165" text-anchor="middle">Machine Learning</text>
+      <text x="60" y="165" text-anchor="middle">Python</text>
+      <text x="120" y="165" text-anchor="middle">Product</text>
+      <text x="180" y="165" text-anchor="middle">SQL</text>
+      <text x="240" y="165" text-anchor="middle">Power BI</text>
+      <text x="300" y="165" text-anchor="middle">Prompting</text>
     </g>
-    <text x="30" y="195" font-size="12">Machine Learning</text>
-    <text x="70" y="195" font-size="12">Python</text>
-    <text x="110" y="195" font-size="12">Product</text>
-    <text x="150" y="195" font-size="12">SQL</text>
-    <text x="190" y="195" font-size="12">Power BI</text>
-    <text x="230" y="195" font-size="12">Prompting</text>
   </svg>
 </section>
 
 <section>
   <h2>Key insights</h2>
   <ol>
-    <li>Machine Learning roles in Islamabad pay the highest average of 520,000 PKR.</li>
-    <li>Lahore offers the highest city average of 450,000 PKR, driven by the ML Engineer salary of 560,000 PKR.</li>
-    <li>Remote positions average only 290,000 PKR, with the top remote role (Prompt Engineer) at 300,000 PKR.</li>
+    <li>Machine Learning roles in Islamabad pay the highest at <strong>520,000 PKR</strong> on average.</li>
+    <li>Lahore offers the top salary for Python skills at <strong>505,000 PKR</strong> on average.</li>
+    <li>Remote positions have a lower average salary of <strong>290,000 PKR</strong>, compared with Islamabad’s <strong>510,000 PKR</strong>.</li>
   </ol>
 </section>
 
 <section>
   <h2>Recommended actions</h2>
   <ol>
-    <li>Prioritize recruiting Machine Learning talent in Islamabad to capture the top salary tier.</li>
-    <li>Target senior Python and Product experts in Lahore where salaries peak.</li>
-    <li>Consider remote hiring for Prompting and Apps Script roles to stay within the lower salary band.</li>
+    <li>Prioritize recruiting Machine Learning talent in Islamabad to capture the highest salary bracket.</li>
+    <li>Target Python experts in Lahore where the average pay aligns with high‑skill demand.</li>
+    <li>Consider offering competitive remote packages above <strong>290,000 PKR</strong> to attract talent while managing cost.</li>
   </ol>
 </section>
 
 <section>
   <h2>All roles</h2>
-  <select id="cityFilter"><option value="">All Cities</option></select>
+  <select id="cityFilter">
+    <option value="">All Cities</option>
+    <option>Karachi</option>
+    <option>Lahore</option>
+    <option>Remote</option>
+    <option>Islamabad</option>
+  </select>
   <table id="dataTable">
     <thead><tr><th>Role</th><th>Company</th><th>City</th><th>Monthly Salary (PKR)</th><th>Main Skill</th><th>Work Type</th><th>Days Open</th></tr></thead>
-    <tbody></tbody>
+    <tbody>
+      <tr><td>Data Analyst</td><td>Alpha Labs</td><td>Karachi</td><td>220000</td><td>SQL</td><td>Hybrid</td><td>12</td></tr>
+      <tr><td>AI Engineer</td><td>Bluewave Retail</td><td>Lahore</td><td>450000</td><td>Python</td><td>Onsite</td><td>30</td></tr>
+      <tr><td>Business Analyst</td><td>Crescent Bank</td><td>Karachi</td><td>260000</td><td>Excel</td><td>Onsite</td><td>8</td></tr>
+      <tr><td>Prompt Engineer</td><td>Delta Digital</td><td>Remote</td><td>300000</td><td>Prompting</td><td>Remote</td><td>5</td></tr>
+      <tr><td>Data Scientist</td><td>Ember Health</td><td>Islamabad</td><td>520000</td><td>Machine Learning</td><td>Hybrid</td><td>21</td></tr>
+      <tr><td>Marketing Analyst</td><td>Falcon Foods</td><td>Karachi</td><td>200000</td><td>Google Sheets</td><td>Onsite</td><td>14</td></tr>
+      <tr><td>BI Developer</td><td>Granite Telecom</td><td>Lahore</td><td>340000</td><td>Power BI</td><td>Hybrid</td><td>9</td></tr>
+      <tr><td>AI Product Manager</td><td>Harbor Logistics</td><td>Karachi</td><td>480000</td><td>Product</td><td>Hybrid</td><td>18</td></tr>
+      <tr><td>Automation Specialist</td><td>Indigo Retail</td><td>Remote</td><td>280000</td><td>Apps Script</td><td>Remote</td><td>6</td></tr>
+      <tr><td>Data Engineer</td><td>Jade Finance</td><td>Islamabad</td><td>500000</td><td>SQL</td><td>Onsite</td><td>27</td></tr>
+      <tr><td>Operations Analyst</td><td>Kite Commerce</td><td>Karachi</td><td>210000</td><td>Excel</td><td>Onsite</td><td>11</td></tr>
+      <tr><td>ML Engineer</td><td>Lumen Systems</td><td>Lahore</td><td>560000</td><td>Python</td><td>Hybrid</td><td>33</td></tr>
+    </tbody>
   </table>
 </section>
 
 <script>
-const rows=`Data Analyst|Alpha Labs|Karachi|220000|SQL|Hybrid|12
-AI Engineer|Bluewave Retail|Lahore|450000|Python|Onsite|30
-Business Analyst|Crescent Bank|Karachi|260000|Excel|Onsite|8
-Prompt Engineer|Delta Digital|Remote|300000|Prompting|Remote|5
-Data Scientist|Ember Health|Islamabad|520000|Machine Learning|Hybrid|21
-Marketing Analyst|Falcon Foods|Karachi|200000|Google Sheets|Onsite|14
-BI Developer|Granite Telecom|Lahore|340000|Power BI|Hybrid|9
-AI Product Manager|Harbor Logistics|Karachi|480000|Product|Hybrid|18
-Automation Specialist|Indigo Retail|Remote|280000|Apps Script|Remote|6
-Data Engineer|Jade Finance|Islamabad|500000|SQL|Onsite|27
-Operations Analyst|Kite Commerce|Karachi|210000|Excel|Onsite|11
-ML Engineer|Lumen Systems|Lahore|560000|Python|Hybrid|33`;
-const data=rows.split('\n').map(l=>l.split('|'));
-const tbody=document.querySelector('#dataTable tbody');
-function render(filter){
-  tbody.innerHTML='';
-  data.filter(r=>!filter||r[2]===filter).forEach(r=>{
-    const tr=document.createElement('tr');
-    r.forEach(c=>{const td=document.createElement('td');td.textContent=c;tr.appendChild(td);});
-    tbody.appendChild(tr);
-  });
-}
-const cities=[...new Set(data.map(r=>r[2]))];
-const sel=document.getElementById('cityFilter');
-cities.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});
-sel.addEventListener('change',()=>render(sel.value));
-render();
+document.getElementById('cityFilter').addEventListener('change',function(){
+  var filter=this.value;
+  var rows=document.querySelectorAll('#dataTable tbody tr');
+  rows.forEach(r=>{ r.style.display = (!filter||r.cells[2].textContent===filter)?'' : 'none'; });
+});
 </script>
 </body>
 </html>
